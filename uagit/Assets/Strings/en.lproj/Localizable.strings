@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  uagit
+
+  Created by Nicolau Atala Pelluzi on 25/01/18.
+  Copyright © 2018 nicolauatala. All rights reserved.
+*/
+
+// General
+LOAD_ERROR_MESSAGE = "Unable to load this information";
+TITLE_ERROR = "Error";
+CANCEL = "Cancel";
+NO_INTERNET_MESSAGE = "Please check your internet connection and try again.";
+MESSAGE_WRONG = "Something went wrong, please try again.";
+OK = "Ok";
+ATTENTION = "Attention";
+NO_PULL_REQUEST = "Repository don't have pull request";

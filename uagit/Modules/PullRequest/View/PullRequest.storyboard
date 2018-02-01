@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tgc-Ta-XNy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pull Request View Controller-->
+        <scene sceneID="AlI-0W-YvN">
+            <objects>
+                <viewController id="tgc-Ta-XNy" customClass="PullRequestViewController" customModule="uagit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qt0-wD-Oyt"/>
+                        <viewControllerLayoutGuide type="bottom" id="RdH-kG-Svo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nGi-ZV-Yge">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="p1T-oJ-Lcr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cra-zU-5pr" customClass="NavigationBar" customModule="uagit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A8g-cp-BRI">
+                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tgc-Ta-XNy" id="ot3-m6-iD6"/>
+                                    <outlet property="delegate" destination="tgc-Ta-XNy" id="uqC-0a-oJP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A8g-cp-BRI" firstAttribute="top" secondItem="Cra-zU-5pr" secondAttribute="bottom" id="0MW-Nf-mfY"/>
+                            <constraint firstItem="p1T-oJ-Lcr" firstAttribute="centerY" secondItem="nGi-ZV-Yge" secondAttribute="centerY" id="698-Kh-MUA"/>
+                            <constraint firstItem="Cra-zU-5pr" firstAttribute="width" secondItem="nGi-ZV-Yge" secondAttribute="width" id="8tq-Py-uIn"/>
+                            <constraint firstItem="p1T-oJ-Lcr" firstAttribute="centerX" secondItem="nGi-ZV-Yge" secondAttribute="centerX" id="9v9-0m-7Iq"/>
+                            <constraint firstItem="Cra-zU-5pr" firstAttribute="centerX" secondItem="nGi-ZV-Yge" secondAttribute="centerX" id="AeD-k3-T9U"/>
+                            <constraint firstItem="A8g-cp-BRI" firstAttribute="leading" secondItem="nGi-ZV-Yge" secondAttribute="leading" id="GDK-D0-M7u"/>
+                            <constraint firstItem="RdH-kG-Svo" firstAttribute="top" secondItem="A8g-cp-BRI" secondAttribute="bottom" id="PiB-gB-LVn"/>
+                            <constraint firstItem="Cra-zU-5pr" firstAttribute="top" secondItem="nGi-ZV-Yge" secondAttribute="top" id="Z2o-pg-W3P"/>
+                            <constraint firstItem="Cra-zU-5pr" firstAttribute="height" secondItem="nGi-ZV-Yge" secondAttribute="height" multiplier="0.093" id="gYZ-6s-c75"/>
+                            <constraint firstItem="p1T-oJ-Lcr" firstAttribute="width" secondItem="nGi-ZV-Yge" secondAttribute="width" id="o2M-2h-4Cb"/>
+                            <constraint firstAttribute="trailing" secondItem="A8g-cp-BRI" secondAttribute="trailing" id="om2-jK-s5q"/>
+                            <constraint firstItem="p1T-oJ-Lcr" firstAttribute="height" secondItem="nGi-ZV-Yge" secondAttribute="height" id="sKc-zP-Vyx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kAb-2z-7L6"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="Cra-zU-5pr" id="lKm-CH-55b"/>
+                        <outlet property="tableView" destination="A8g-cp-BRI" id="sPc-ue-RVn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGO-Mi-Pah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359.2" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="375" height="937"/>
+    </resources>
+</document>

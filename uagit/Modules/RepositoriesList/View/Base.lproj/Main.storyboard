@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RXF-5L-MXM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Repositories List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RepositoriesListViewController" customModule="uagit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7E1-g1-wOK"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Qr-iy-dxE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="qbU-HG-FfA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wp8-0G-EHG" customClass="NavigationBar" customModule="uagit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HhU-X9-RTD">
+                                <rect key="frame" x="0.0" y="61.5" width="375" height="605.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hR6-xf-7yN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iDQ-Qc-t2H"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="HhU-X9-RTD" firstAttribute="top" secondItem="wp8-0G-EHG" secondAttribute="bottom" id="0o8-n1-nPl"/>
+                            <constraint firstItem="wp8-0G-EHG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.093" id="2MW-zT-xwf"/>
+                            <constraint firstItem="wp8-0G-EHG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Hr-hH-YZa"/>
+                            <constraint firstItem="qbU-HG-FfA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="9HX-Pc-8sf"/>
+                            <constraint firstItem="2Qr-iy-dxE" firstAttribute="top" secondItem="HhU-X9-RTD" secondAttribute="bottom" id="BVS-jd-4gc"/>
+                            <constraint firstItem="HhU-X9-RTD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FQP-kq-RJy"/>
+                            <constraint firstAttribute="trailing" secondItem="HhU-X9-RTD" secondAttribute="trailing" id="RqY-iw-fM7"/>
+                            <constraint firstItem="qbU-HG-FfA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VKz-lQ-O8d"/>
+                            <constraint firstItem="qbU-HG-FfA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="bqV-sj-9LQ"/>
+                            <constraint firstItem="qbU-HG-FfA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fDH-Yf-45g"/>
+                            <constraint firstItem="wp8-0G-EHG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="xA4-sr-g8q"/>
+                            <constraint firstItem="wp8-0G-EHG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zyR-gw-V1w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fqo-ed-UyN"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="wp8-0G-EHG" id="GoE-ho-fiT"/>
+                        <outlet property="tableView" destination="HhU-X9-RTD" id="GUZ-Km-GWm"/>
+                        <segue destination="pYe-jg-V0h" kind="show" identifier="toListPullRequestSegue" id="pxr-JI-fh1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="31.934032983508249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Int-qt-LRx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RXF-5L-MXM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SI7-4B-rpW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jzc-CJ-jkS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUi-fC-uUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="32"/>
+        </scene>
+        <!--PullRequest-->
+        <scene sceneID="7dc-dw-izf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PullRequest" id="pYe-jg-V0h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKD-Cs-Eqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359.2" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="375" height="937"/>
+    </resources>
+</document>
