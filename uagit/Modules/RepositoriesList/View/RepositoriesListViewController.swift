@@ -36,6 +36,10 @@ class RepositoriesListViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        print(#function)
+        tableView.setNeedsDisplay()
+    }
 }
 
 extension RepositoriesListViewController: RepositoryView {
